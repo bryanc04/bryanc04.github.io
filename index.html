@@ -5,21 +5,29 @@
 <style>
 * {box-sizing: border-box;}
 
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
 .img-comp-container {
   position: relative;
-  height: 200px; /*should be the same height as the images*/
+  height: 100vh; /* Set to full viewport height */
+  width: 100vw; /* Set to full viewport width */
 }
 
 .img-comp-img {
   position: absolute;
-  width: auto;
-  height: auto;
+  width: 100%;
+  height: 100%;
   overflow:hidden;
 }
 
 .img-comp-img img {
   display:block;
-  vertical-align:middle;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 .img-comp-slider {

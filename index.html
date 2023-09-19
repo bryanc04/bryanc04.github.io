@@ -11,11 +11,14 @@ body, html {
 }
 
 .img-comp-container {
-  position: relative;
+  position: fixed;
   height: 100vh; /* Set to full viewport height */
   width: 100vw; /* Set to full viewport width */
 }
 
+.fixed{
+	width: 100vw;
+}
 .img-comp-img {
   position: absolute;
   width: 100%;
@@ -26,7 +29,7 @@ body, html {
 .img-comp-img img {
   display:block;
   height: 100%;
-  width: 100%;
+  width: 100vw;
   object-fit: cover;
 }
 
@@ -53,6 +56,7 @@ function initComparisons() {
     compareImages(x[i]);
   }
   function compareImages(img) {
+
     var slider, img, clicked = 0, w, h;
     /*get the width and height of the img element*/
     w = img.offsetWidth;
@@ -124,12 +128,14 @@ function initComparisons() {
 <body>
 
 
+
 <div class="img-comp-container">
   <div class="img-comp-img">
-    <img src="Howe Hall.png">
-  </div>
-  <div class="img-comp-img img-comp-overlay">
     <img src="Mason Hall.png">
+  </div>
+  <!-- Add class 'fixed' to make the image fixed -->
+  <div class="img-comp-img img-comp-overlay fixed ">
+    <img src="Howe Hall.png">
   </div>
 </div>
 
